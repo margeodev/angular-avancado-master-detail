@@ -3,18 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CategoryListComponent } from './pages/categories/category-list/category-list.component';
-import { CategoryFormComponent } from './pages/category/category-form/category-form.component';
+import { InMemoryDatabase } from './in-memory-database';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CategoryListComponent,
-    CategoryFormComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDatabase)
   ],
   providers: [],
   bootstrap: [AppComponent]
