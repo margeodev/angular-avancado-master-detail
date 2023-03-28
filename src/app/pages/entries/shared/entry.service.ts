@@ -38,8 +38,9 @@ export class EntryService extends BaseResourceService<Entry> {
     return this.categoryService.getById(entry.categoryId).pipe(
       flatMap(category => {
         entry.category = category;
-        return sendFn(entry);
-      })
+        return sendFn(entry)
+      }),
+      catchError(this.handleError)
     );
   }
 
