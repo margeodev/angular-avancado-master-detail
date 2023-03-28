@@ -35,6 +35,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "currency-formatter",
+              "toastr",
+              "chart.js"
+            ],
             "aot": true,
             "outputPath": "dist/base-webapp",
             "index": "src/index.html",
@@ -45,7 +50,7 @@
               "src/favicon.ico",
               "src/assets"
             ],
-             "styles": [
+            "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/toastr/build/toastr.min.css",
               "node_modules/primeicons/primeicons.css",
@@ -56,8 +61,7 @@
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "node_modules/chart.js/dist/Chart.bundle.js"
-            ],
-            "es5BrowserSupport": true
+            ]
           },
           "configurations": {
             "production": {
